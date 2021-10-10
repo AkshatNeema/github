@@ -1,0 +1,61 @@
+def datetime():
+    import datetime
+    return datetime.datetime.now()
+
+
+# check the name who is there Chaman, Chomu, Baa
+# What they want insert or see there details
+# now check the task whether they want diet details or exercise details
+
+user_name = input("plz enter your name:\t")
+x = user_name.capitalize()
+l = ["Chaman", "Chomu", "Baa"]
+def edit(g):
+    with open(f"{g}Diet.txt","a") as f:
+        z = str(input("Enter food  "))
+        f.write(f"{datetime()} {z} \n")
+
+
+def show(g):
+    with open(f"{g}Diet.txt","r") as f:
+        print(f.read())
+
+
+def edite(g):
+    with open(f"{g}Exe.txt", "a") as f:
+        z = str(input("Enter exercise  "))
+        f.write(f"{datetime()} {z} \n")
+        print("done")
+
+
+def showe(g):
+    with open(f"{g}Exe.txt", "r") as f:
+        print(f.read())
+
+
+if x in l:
+        es = int(input("Enter 1 for Edit, 2 for Show details"))
+        if es == 1:
+            if x == "Chaman":
+                edit(x)
+                edite(x)
+            elif x == "Chomu":
+                edit(x)
+                edite(x)
+            elif x == "Baa":
+                edit(x)
+                edite(x)
+
+        elif es == 2:
+            if x == "Chaman":
+                show(x)
+                showe(x)
+            elif x == "Chomu":
+                show(x)
+                showe(x)
+            elif x == "Baa":
+                show(x)
+                showe(x)
+else:
+    print("invalid input")
+    print("register yourself to Ak gym")
